@@ -1,0 +1,217 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+%\ProvidesPackageRCS $Header: beamerthemeSam.sty,v 1.7 2007/01/28 20:48:30 tantau Exp $
+
+
+\mode<presentation>
+
+\usefonttheme[onlymath]{serif}
+\usecolortheme{default}
+\useinnertheme{default}
+\useoutertheme{default}
+
+\mode
+<all>
+
+% this style was created by Philippe Dreuw and Thomas Deselaers
+\ProvidesPackage{beamerthemeSam} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\RequirePackage{tangocolors}
+\selectcolormodel{rgb}
+\mode<presentation>
+
+
+\definecolor{skybluelight}{RGB}{135,206,250}
+\definecolor{skyblue}{RGB}{135,206,235}
+\definecolor{steelblue}{RGB}{70,130,180}
+
+\definecolor{acemsblue}{RGB}{59,110,143}
+\definecolor{acemsgreen}{RGB}{59,143,110}
+
+%\setbeamercolor*{title}{fg=steelblue}
+%\setbeamercolor*{frametitle}{fg=steelblue}
+%\setbeamercolor*{structure}{fg=steelblue}
+%\setbeamercolor*{item}{fg=skybluelight}
+%\setbeamercolor*{separation line}{bg=skyblue}
+
+
+% QUT colours
+\definecolor{qutpmsblue}{RGB}{0,61,219}
+\definecolor{qutblue}{RGB}{0,0,128}
+\definecolor{ilaqhdarkorange}{RGB}{255,101,1}
+\definecolor{ilaqhlightorange}{RGB}{255,153,52}
+\definecolor{ilaqhdarkblue}{RGB}{1,82,137}
+\definecolor{ilaqhlightblue}{RGB}{199,219,252}
+\definecolor{ilaqhpaleblue}{RGB}{219,232,249}
+\definecolor{whoblue}{RGB}{2,82,133}
+
+%\setbeamercolor*{title}{fg=ilaqhdarkblue}
+%\setbeamercolor*{frametitle}{fg=ilaqhdarkblue,bg=ilaqhpaleblue}
+%\setbeamercolor*{structure}{fg=ilaqhdarkblue}
+%\setbeamercolor*{item}{fg=ilaqhdarkorange}
+%\setbeamercolor*{separation line}{bg=ilaqhlightorange}
+%
+%\setbeamercolor{alerted text}{fg=ilaqhdarkblue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setbeamercolor{headline}{fg=ilaqhdarkblue,bg=white}
+\setbeamercolor{headline}{fg=whoblue,bg=white}
+%\setbeamercolor{headline}{bg=whoblue,fg=white}% <- was this
+%\setbeamercolor{footline}{fg=qutpmsblue, bg=ilaqhpaleblue}% <- was this
+\setbeamercolor{footline}{fg=whoblue, bg=white}
+\setbeamerfont{footline}{size=\large,series=\tt}
+\setbeamercolor{separation line}{bg=ilaqhdarkblue}
+%\setbeamercolor{title in headline}{fg=qutpmsblue,bg=white}
+\setbeamercolor{title in headline}{fg=whoblue,bg=white}
+%\setbeamercolor{title in headline}{bg=whoblue,fg=white}% <- was this
+\setbeamerfont{title in headline}{size=\VERYHUGE,series=\it, family=\rmfamily\selectfont}
+\setbeamerfont{title}{size=\VERYHUGE,series=\it, family=\rmfamily\selectfont}
+\setbeamercolor{author in headline}{fg=whoblue,bg=white}
+%\setbeamercolor{author in headline}{bg=whoblue,fg=white}% <- was this
+\setbeamercolor{institute in headline}{fg=whoblue,bg=white}
+%\setbeamercolor{institute in headline}{bg=whoblue,fg=white}% <- was this
+
+%\setbeamercolor{framesubtitle}{fg=ilaqhlightorange, bg=ilaqhlightblue}
+\setbeamercolor{author in head/foot}{fg=whoblue, bg=ilaqhpaleblue}
+\setbeamercolor{title in head/foot}{fg=whoblue, bg=ilaqhpaleblue}
+
+\setbeamercolor*{normal text}{bg=white, fg=black}
+%\setbeamercolor*{block body}{bg=ilaqhpaleblue,fg=black}
+\setbeamercolor*{block body}{bg=white,fg=black}
+%\setbeamercolor*{block title}{bg=whoblue,fg=white}
+\setbeamercolor*{block title}{fg=whoblue,bg=ilaqhpaleblue}
+%\setbeamerfont{block title}{size=\VeryHuge,series=\bf}
+\setbeamercolor{upper separation line head}{fg=qutblue}
+
+\setbeamercolor*{example body}{fg=white,bg=black}
+\setbeamercolor*{example text}{fg=white,bg=black}
+\setbeamercolor*{example title}{bg=ilaqhdarkorange,fg=ilaqhlightblue}
+
+\setbeamercolor{alerted text}{fg=ilaqhlightorange}
+
+%\setbeamercolor{example text}{fg=taorange}
+\setbeamercolor{structure}{fg=ilaqhdarkblue}
+
+\setbeamerfont{block title}{size=\large}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip 0.75ex
+  \begin{beamercolorbox}[rounded=true,shadow=false,leftskip=1cm,colsep*=.75ex]{block title}%
+%  \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\cinzel{\insertblocktitle}
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+
+  \usebeamerfont{block body}%
+%  \begin{beamercolorbox}[rounded=true,shadow=true,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=false,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+ }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{.01\paperwidth}
+      \end{column}
+      \begin{column}{.18\paperwidth}
+      	\vskip1cm
+        \begin{center}
+        %  \resizebox{0.9\linewidth}{!}{\input{logo3.pgf}}
+         \resizebox{0.9\linewidth}{!}{\includegraphics[width=\linewidth]{ACEMS-logo-no-text2.pdf}}
+        
+          \vskip 1ex
+        \end{center}
+      \end{column}
+      \begin{column}{.71\paperwidth}
+        \vskip4ex
+        \raggedleft
+        \usebeamercolor{title in headline}{\color{fg}\cinzel{ \Huge{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg} \Large{ \insertinstitute}\\[1ex]}     
+ 
+      \end{column}
+      \begin{column}{0.09\paperwidth}
+        \vskip1cm
+        \begin{center}
+%          \resizebox{0.9\linewidth}{!}{\input{whologo.pgf}}
+          \resizebox{0.9\linewidth}{!}{\input{logo3.pgf}}
+ \vskip 1ex
+        \end{center}
+      \end{column}
+      \begin{column}{.01\paperwidth}
+      \end{column}
+    \end{columns}
+	\vspace{1ex}
+  \end{beamercolorbox}
+
+%  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+%    \rule{0pt}{2pt}
+%  \end{beamercolorbox}
+}
+
+%  \setbeamertemplate{headline}{  
+%    \leavevmode
+%    \begin{beamercolorbox}[sep=0.5cm,wd=.8\paperwidth]{headline}
+%     \usebeamercolor{title in headline}{\raggedleft\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+%      \usebeamercolor{author in headline}{\raggedleft\color{fg}\large{\insertauthor}\\[1ex]}
+%      \usebeamercolor{institute in headline}{\raggedleft\color{fg}\large{\insertinstitute}\\[1ex]}     
+%    \end{beamercolorbox}%
+%    \begin{beamercolorbox}[wd=.2\paperwidth]{logo in headline}
+%      \centering
+%      \LARGE{LOGO}
+%    \end{beamercolorbox}  
+%
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+    \url{https://github.com/samclifford/random-effects-2017}
+    \hfill
+    \href{mailto:samuel.clifford@qut.edu.au}{samuel.clifford@qut.edu.au}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    %\rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster"
+%%% End: 

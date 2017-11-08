@@ -1,0 +1,63 @@
+\documentclass[11pt]{beamer}
+
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{bibentry}
+%\usepackage{ctable,tabularx,array}
+\usepackage{subfig}
+\usepackage{grffile}
+\usepackage{amssymb,amsmath}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage[orientation=landscape,size=a0,scale=1.25,debug]{beamerposter}
+\usepackage[orientation=portrait,size=a0,scale=1.1,debug]{beamerposter}
+\usepackage{caption}
+%\usepackage{caption}
+
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an 
+\setlength{\parskip}{10pt}
+\usepackage{cinzel}
+\usepackage{heuristica}
+\usepackage[default,regular,black]{sourcesanspro}
+\usepackage[default,regular,black]{sourcecodepro}
+
+\usepackage[T1]{fontenc}
+
+
+%\usefonttheme{professionalfonts} % using non standard fonts for beamer
+%\usefonttheme[onlymath]{serif} % default family is serif
+
+\usetheme{Sam}
+
+\def\wordcol#1{%\left\{%
+\tabcolsep=0pt%
+\mbox{%
+%\renewcommand{\baselinestretch}{2}
+\def\arraystretch{1}%
+\small %\sl%
+\begin{tabular}{c}%
+%\textnormal{#1}%
+#1
+\end{tabular}%
+}%end mbox
+%\right\} 
+}%end wordcol
+
+\renewcommand{\thefootnote}{}
+\def\newblock{\hskip .11em plus .33em minus .07em}
+\renewcommand{\vec}[1]{\mbox{\boldmath{$#1$}}}
+\newcommand{\mat}[1]{\mathrm{#1}}
+
+
+\title[]{Visualisation of random effects\\[12pt] in Bayesian hierarchical models}
+\author{Sam Clifford \and You, the Reader}
+\institute{Science and Engineering Faculty, Queensland University of Technology, Brisbane, Australia}
+\date{}
+
+\begin{document}
+
+%\input{columns.tex}
+\input{content.tex}
+
+\end{document}
