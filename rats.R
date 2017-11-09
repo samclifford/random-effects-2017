@@ -151,3 +151,8 @@ inner_join(tidy(rats.p, conf_level = 0.8),
   xlab("Rat ID") +
   ylab("Parameter value")
  
+## make a table
+
+rats.tidy %>%
+  kable(format = "markdown", digits = 2) %>%
+  write(., file="output.md")
