@@ -155,4 +155,21 @@ inner_join(tidy(rats.p, conf_level = 0.8),
 
 rats.tidy %>%
   kable(format = "markdown", digits = 2) %>%
-  write(., file="output.md")
+  write(., file="output_long.md")
+
+
+rats.tidy %>%
+  separate(parameter, into= c("parameter", "Rat.ID"), sep = "(\\[|\\])") %>%
+  #mutate_if(.predicate = is.numeric, .funs = funs(round(.,2))) %>%
+  mutate_if(is.numeric, .funs=funs(sprintf('%3.2f', .))) %>%
+  mutate(value = paste(mean, " (", `2.5%`, ", ", `97.5%`, ")", sep="")) %>%
+  #mutate(value = sprintf('%0.2f', mean))
+  select(parameter, Rat.ID, value) %>%
+  spread(key = parameter, value=value) %>%
+  mutate(Rat.ID = parse_number(Rat.ID)) %>%
+  arrange(Rat.ID) %>%
+  rename(`Rat ID` = Rat.ID,
+         `Intercept` = beta.0,
+         `Slope` = beta.1) %>%
+  kable(format = "markdown", align = 'rrr') %>%
+  write(., file="output_wide.md")
