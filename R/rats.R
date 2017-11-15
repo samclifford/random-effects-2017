@@ -2,7 +2,7 @@ library(tidyverse)
 
 library(hrbrthemes)
 
-rats <- read_csv("rats.csv")
+rats <- read_csv("../data/rats.csv")
 
 ## data
 windows(3,3)
@@ -176,7 +176,7 @@ ggplot(data=rats.pred.tidy, aes(x=Age, y=mean)) +
 
 rats.tidy %>%
   kable(format = "markdown", digits = 2) %>%
-  write(., file="output_long.md")
+  write(., file="../outputs/output_long.md")
 
 
 rats.tidy %>%
@@ -193,4 +193,4 @@ rats.tidy %>%
          `Intercept` = beta.0,
          `Slope` = beta.1) %>%
   kable(format = "markdown", align = 'rrr') %>%
-  write(., file="output_wide.md")
+  write(., file="../outputs/output_wide.md")
