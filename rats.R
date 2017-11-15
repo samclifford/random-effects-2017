@@ -15,6 +15,12 @@ rats.d <- as.list(rats)
 rats.d$n <- nrow(rats)
 rats.d$J <- max(rats$Rat.ID)
 
+pred.grid <- expand.grid(Rat.ID.pred = 1:30, Age.pred = 0:35)
+
+rats.d$Age.pred <- pred.grid$Age.pred
+rats.d$Rat.ID.pred <- pred.grid$Rat.ID.pred
+rats.d$m <- nrow(pred.grid)
+
 library(rjags)
 
 rats.m <- jags.model(file="rats.bug", data = rats.d)
@@ -151,6 +157,21 @@ inner_join(tidy(rats.p, conf_level = 0.8),
   xlab("Rat ID") +
   ylab("Parameter value")
  
+## posterior prediction
+
+rats.pred <- coda.samples(rats.m, "Weight.pred", n.iter = 5e3)
+rats.pred.tidy <- tidy(rats.pred)
+
+rats.pred.tidy %<>% bind_cols(pred.grid) %>% rename(Rat.ID = Rat.ID.pred,
+                                                    Age = Age.pred)
+
+ggplot(data=rats.pred.tidy, aes(x=Age, y=mean)) +
+  geom_line() +
+  facet_wrap( ~ Rat.ID) +
+  geom_point(data=rats, aes(y=Weight)) +
+  geom_ribbon(aes(ymin=`2.5%`, ymax=`97.5%`), fill="lightskyblue", alpha=0.5) +
+  theme_bw()
+
 ## make a table
 
 rats.tidy %>%

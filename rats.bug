@@ -1,0 +1,28 @@
+model{
+  
+  for (i in 1:n){
+    
+    Weight[i] ~ dnorm(mu[i], tau.y)
+    mu[i] <- beta.0[Rat.ID[i]] + beta.1[Rat.ID[i]]*Age[i] 
+    
+  }
+  
+  for (j in 1:J){
+    beta.0[j] ~ dnorm(beta.00, tau.0)
+    beta.1[j] ~ dnorm(beta.10, tau.1)
+  }
+  
+  beta.00 ~ dnorm(0, 1e-6)
+  beta.10 ~ dnorm(0, 1e-6)
+  
+  tau.y ~ dgamma(0.001, 0.001)
+  tau.0 ~ dgamma(0.001, 0.001)
+  tau.1 ~ dgamma(0.001, 0.001)
+  
+  
+  for (i in 1:m){
+    Weight.pred[i] ~ dnorm(mu.pred[i], tau.y)
+    mu.pred[i] <- beta.0[Rat.ID.pred[i]] + beta.1[Rat.ID.pred[i]]*Age.pred[i]
+  }
+  
+}
