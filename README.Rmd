@@ -23,7 +23,7 @@ The results at the conference for each plot were
 | Cumulative density | 3 | 9 | 11 | 23 | 
 | Faceted density | 1 | 7 | 19 | 27 |
 
-![Final poster](final.jpg)
+![Final poster](final.jpg =360x)
 
 Comments about the caterpillar (raterpillar?) plot were that it's a common way they see it presented but they don't normally sort by one of the parameter levels' medians. One coauthor indicated that they hated the ordering as it implies a pattern that isn't "real" and that it misled them into thinking they were looking at posterior predictions of the rats' growth. The STAN-style visualisation was most popular, with a five number summary deemed more informative and reading bars horizontally rather than vertically was easier on the eyes as people scan left to right more easily than up and down. Another coauthor indicated that they wanted to know the overall mean, the posterior mean of $\beta_{00}$ and $\beta_{10}$ for context to indicate whether a given rat was higher or lower than the mean and this annotation was added to the plot.
 

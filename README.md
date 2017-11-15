@@ -64,7 +64,7 @@ The results at the conference for each plot were
 </tbody>
 </table>
 
-![Final poster](final.jpg)
+![Final poster](final.jpg%20=360x)
 
 Comments about the caterpillar (raterpillar?) plot were that it's a
 common way they see it presented but they don't normally sort by one of
